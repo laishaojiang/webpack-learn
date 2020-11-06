@@ -2,12 +2,13 @@
  * @Author: laishaojiang
  * @Date: 2020-11-03 19:27:04
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-11-03 19:46:20
+ * @LastEditTime: 2020-11-05 12:17:37
  * @
 # Description: 
  */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TxtWebpackPlugin = require('./myPlugins/txt-webpack-plugin')
 
 module.exports = {
   entry: './src/index',
@@ -30,7 +31,8 @@ module.exports = {
       template: "./src/index.html",
       filename: "index.html",
       chunks: ["main"]
-    })
+    }),
+    new TxtWebpackPlugin()
   ],
   devServer: {
     port: 8080,
